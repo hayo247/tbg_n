@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'TmoneyRoundWindExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+	font-family: 'TmoneyRoundWindExtraBold';
+}
+
+a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outline:none}
+.line { border-top: 2px solid #8C8C8C; margin: 0.5rem 0.5rem; display: -webkit-box;}
+.nonDisplay{display:none !important}
+.left {float:left !important}
+.right {float:right !important}
+
+.red {color:red;}
+.yellow {color:yellow;}
+.fontsize1 {font-size:0.5rem}
+.fontsize2 {font-size:0.7rem}
+.fontsize3 {font-size:1rem}
+.fontsize4 {font-size:1.2rem}
+.fontsize5 {font-size:1.5rem}
+
+.inline {display:inline-block;}
+.layer_popup{display: contents; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
+.layer_popup div{display:block; text-align:center;}
+.layer{z-index:999; width: 30rem !important; min-height: 10rem; max-height: 13rem; background-color: #fff; border: 1px solid #e5e5e5; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; border-radius: 5px; box-shadow: 0 0 10px -4px;}
+.layer p {font-size:1.8rem; margin:1.5rem 0}
+.layer button {font-size:1.5rem; padding:0.5rem 1rem; background:#4375DB; color:fff; border-radius:0.5rem}
+.dimmed{z-index:998; background-color: rgba(0, 0, 0, 0.75); position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+
+.paylayer {position: absolute;top: 0;z-index: 999;left: 0;width: 100%;}
+.paylayer img.pc{display:block;}
+.paylayer img.mobile{display:none;}
+.paylayer .divImg img{width: 100%; height: 100%;}
+.paylayer .divMsg{position: absolute;top: 25%;z-index: 999;right: 1rem;width: 50%; font-size:1.5rem}
+.paylayer button{width: 37%; height: 4rem; font-size: 1.8rem; background: #4374D9; color: #fff; margin-top:2rem}
+.whiteDimmed{z-index:998; background-color: #FFF; position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+	
+.helplayer{z-index:999; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto;}
+.helplayer input[type='radio']{display: none;}
+.helplayer div.silde{display:none;}
+.helplayer input[id="slide01"]:checked ~ .slide01{display:block;}
+.helplayer input[id="slide02"]:checked ~ .slide02{display:block;}
+.helplayer input[id="slide03"]:checked ~ .slide03{display:block;}
+.helplayer input[id="slide04"]:checked ~ .slide04{display:block;}
+.helplayer input[id="slide05"]:checked ~ .slide05{display:block;}
+.helplayer input[id="slide06"]:checked ~ .slide06{display:block;}
+.helplayer input[id="slide07"]:checked ~ .slide07{display:block;}
+.helplayer img.pc{display:block;}
+.helplayer img.mobile{display:none;}
+.helplayer img{width: calc(100% - 5rem) !important;  height: calc(100% - 5rem) !important; border: 1px solid #e5e5e5; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; border-radius: 5px; box-shadow: 0 0 10px -4px;}
+.helplayer .btn_close{float: right; background: url(./img/icon/close.png) no-repeat; width: 3.5rem; height: 3.5rem; background-size: contain; border: 0; position: sticky; right: 3.5rem; top: 3.5rem;cursor:pointer;z-index:999;}
+.helplayer .div_move{position:relative; height:55%}
+.helplayer .btn_left{background: url(./img/icon/left.png) no-repeat; width: 5rem; height: 5rem; background-size: contain; border: 0; position: absolute; left: 0.5rem; bottom:0;cursor:pointer;}
+.helplayer .btn_right{background: url(./img/icon/right.png) no-repeat; width: 5rem; height: 5rem; background-size: contain; border: 0; position: absolute; right: 0.5rem; bottom:0;cursor:pointer;}
+.helplayer .paging{position:absolute; bottom:0rem; width: 100%; text-align:center;}
+.helplayer .paging label{margin: 0.5rem 0.2rem; width:2rem; height:1.5rem; display:inline-block; border-radius:45%; background:#B2CCFF}
+.helplayer input[id="slide01"]:checked ~ .paging label[for="slide01"]{background:#4374D9}
+.helplayer input[id="slide02"]:checked ~ .paging label[for="slide02"]{background:#4374D9}
+.helplayer input[id="slide03"]:checked ~ .paging label[for="slide03"]{background:#4374D9}
+.helplayer input[id="slide04"]:checked ~ .paging label[for="slide04"]{background:#4374D9}
+.helplayer input[id="slide05"]:checked ~ .paging label[for="slide05"]{background:#4374D9}
+.helplayer input[id="slide06"]:checked ~ .paging label[for="slide06"]{background:#4374D9}
+.helplayer input[id="slide07"]:checked ~ .paging label[for="slide07"]{background:#4374D9}
+
+.content {padding:0.1rem; position:relative}
+.content ul {list-style: none;}
+
+.content .top {padding:0.2rem; display : inline-block; width:100%}
+.content .top ul li {float:left;width:30%;text-align:center;color:#555}
+.content .top ul li input {display: none;}
+.content .top ul li .top_group{background:#f8f8f8;display:block;padding:10px 0;margin:3px 5px;border:1px solid #fff;position:relative;box-sizing:border-box;border-radius:4px;position:relative;letter-spacing:-1px;box-shadow:-1px -1px 0px rgba(0,0,0,0.1); letter-spacing:.5rem; font-size: 1.5rem; cursor:pointer}
+.content .top ul li.selected .top_group{background:#4375DB; border-color:#00096F; color:#fff}
+
+.content .help {display: block; position: absolute; background: url('./img/icon/question.png') no-repeat;background-size: contain; width: 3rem; height: 3rem; border: 0; cursor:pointer; z-index: 50;}
+
+.content .center {position: relative; border: 1px solid #00086D;border-radius: 0.5rem;background: #F8F8F8; display: inline-table; height: 35.8rem;width:calc(100% - 1rem)}
+
+.content div.not(.layer_popup) { display:inline-table; width:100%}
+.content .step1 .imgbox { min-width: 30%; width: 50%; float: left; padding: 0.5rem;}
+.content .step1 .imgbox img{ width: calc(100% - 1rem);}
+
+.content .step1 .step_page {position: absolute; text-align: center; bottom: 0px; width: 100%;}
+.content .step1 .step_page p{margin : 0.2rem 0}
+
+.content .step1 .selectbox {display:inline-block; width: 45%; margin:0.5rem}
+
+.content .step1 .selectbox .div_radio [type='radio'], label {vertical-align: middle;}
+.content .step1 .selectbox .div_radio {padding:0.5rem 0; font-size:1.5rem; line-height: 2rem; }
+.content .step1 .selectbox .div_radio input[type='radio'] {appearance: none;border: max(2px, 0.1em) solid gray; border-radius: 50%; width: 2em; height: 2em;}
+.content .step1 .selectbox .div_radio input[type='radio']:checked { border: 0.4em solid tomato;}
+.content .step1 .selectbox .div_radio input[type="radio"]:hover { box-shadow: 0 0 0 max(4px, 0.2em) lightgray; cursor: pointer;}
+.content .step1 .selectbox .div_radio .explan {display:none;}
+.content .step1 .selectbox .div_radio input[type='radio']:checked ~ .explan {display: block; margin:0; font-size:0.8rem; color:tomato; }
+
+.content .step1 .selectbox.step1_3 {height : 30rem; overflow:auto;}
+.content .step1 .selectbox .div_img {width:100%; height:4rem; margin:0.2rem 0; display: inline-block; position:relative; vertical-align:middle;}
+.content .step1 .selectbox .div_img label{width:100%; height:100%;position: absolute; text-align:center; top:0; padding-top:1.2rem;color:#fff;-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #001B81;}
+.content .step1 .selectbox .div_img img{width:100%; height:100%;}
+
+.content .step1 .selectbox .div_img.pattern {width: 48%;}
+.content .step1 .selectbox .div_img.color {width: 18%; margin: 0.2rem}
+.content .step1 .selectbox .div_img.color label {width: 100%; height:100%; top: 0; padding:0; font-size: 0;}
+
+.content .step1 .selectbox .div_input {margin: 0.3rem;}
+.content .step1 .selectbox .div_input .title {font-size: 1.5rem; width: 5rem; display: inline-block;}
+.content .step1 .selectbox .div_input .title2 {font-size: 1.5rem; width: 100%; display: inline-block;}
+.content .step1 .selectbox .div_input .unit {font-size: 1.2rem; margin-left:0.3rem }
+.content .step1 .selectbox .div_input select {font-size: 1.5rem; width: calc(100% - 10rem); border-radius: 0.3rem; border: 1px solid #B2CCFF;}
+.content .step1 .selectbox .div_input input {font-size: 1.5rem; width: calc(100% - 10rem); border-radius: 0.3rem; border: 1px solid #B2CCFF; text-align:right}
+.content .step1 .selectbox .div_input input:disabled {background: #BDBDBD;}
+
+.content .step2 { min-height:50}
+.content .step2 table.basket { margin:0 0.5rem; width:calc(100% - 1rem); border-collapse:collapse;}
+.content .step2 table .check {width:5%}
+.content .step2 table .all {width:95%}
+.content .step2 table .name {width:30%}
+.content .step2 table .count {width:10%}
+.content .step2 table .shape {width:12%}
+.content .step2 table .safe {width:15%}
+.content .step2 table .option {width:25%}
+.content .step2 table .price {width:20%}
+
+.content .step2 table .checkButton {width:10%}
+.content .step2 table .totalName {width:20%}
+
+.content .step2 table.basket tr{width:100%; display:inline-table}
+.content .step2 table.basket th {padding:0.3rem}
+.content .step2 table.basket thead {display:inline-block; width:100%; border-bottom: 2px solid #000;}
+.content .step2 table.basket tbody {display:inline-block; width:100%; height:20rem; background:#D8D8D8; overflow: auto;}
+.content .step2 table.basket tbody tr{background:#fff; border-bottom:1px solid #5D5D5D;}
+
+.content .step2 .total {margin:0 0.5rem; width:calc(100% - 1rem); background: #353535;color: #fff;}
+.content .step2 .total button{padding: 0.2em 0.9rem;font-size: 0.9rem;margin-top: 0.2rem;border-radius: 0.3rem;}
+.content .step2 .unit {margin:0 1.5rem}
+
+.content .step2 div.option {display:inline-block; width:calc(100% - 1rem); text-align: center; margin:0.5rem; border: 1px solid; border-radius: 0.5rem; background: #EAEAEA;}
+.content .step2 div.option p{margin:0.5rem 0}
+.content .step2 .info{text-align:center; margin:0; padding:0 0 0.5rem; font-size:1.5rem}
+
+.content .step3 .title {padding:0 1rem; margin:0.2rem 0}
+.content .step3 .sendMail {padding:0 1rem;}
+.content .step3 .sendMail input {display:block; margin:0.2rem 0; font-size:1.5rem; border-radius:0.3rem}
+
+.content .step3 .agree {text-align:center; height:16rem; padding:0.5rem 0}
+.content .step3 .agree textarea {width: calc(100% - 1rem); height:12rem; margin: 0 0.5rem;}
+
+.content .step3 .infobox {margin:0 1rem}
+.content .step3 .infobox p{margin:0.3rem 0}
+.content .step3 .infobox ul{margin:0; list-style:disc;}
+
+.content .bottom {padding: 0.3rem 0;}
+.content .bottom .next {float:right;}
+.content .bottom button {width:auto; height:auto; font-size:1.8rem; background:#4374D9; color:fff; border:1px solid #4374D9; border-radius:0.5rem; padding:0.3rem 1.3rem; cursor:pointer}
+.content .bottom button:disabled {background:#747474; border-color:#353535}
+
+@media ( max-width: 767px ) {
+    /* 모바일 */
+	.helplayer img.pc{display:none;}
+	.helplayer img.mobile{display:block;}
+	.helplayer img{height: calc(100% - 8rem) !important;}
+	.helplayer .btn_close{top: 4.5rem;}
+	.helplayer .paging{bottom:1rem}
+	
+	.paylayer .divMsg{position: absolute;top: 50%;z-index: 999;left: 0;width: 100%;}
+	.paylayer button{width: 80%; height: 4rem; font-size: 1.8rem; background: #4374D9; color: #fff; margin-top:2rem}
+
+	.content .center {width:100%}
+
+    .content .top ul {padding : 0; margin: 0;}
+    .content .top ul li {width: 100%}
+
+    .content .step1 .imgbox {width: 100%;}
+    .content .step1 .step_page {width: 100%;}    
+    .content .step1 .step_page p {margin : 0}
+    .content .step1 .selectbox { width: calc(100% - 1rem)}
+    .content .step1 .selectbox.step1_3 {height: 21rem;overflow:auto;margin-bottom :1.5rem}
+    .content .step1 .selectbox .div_input:last-child {margin-bottom: 1.5rem;}
+	.content .step1 .selectbox .div_input select{width:calc(100% - 7rem)}
+    
+	.content .top ul li .top_group {font-size: 1.2rem; padding:0.4rem 0 }
+    
+    .content .step2 table.basket thead {display: none;}  
+    .content .step2 table.basket th {text-align: left;}
+    .content .step2 table.basket tbody div.tb {display:flex}
+    .content .step2 table.basket tbody .tb_title {width:25%}
+    .content .step2 table.basket tbody .tb_value {width:75%}
+    .content .step2 table.total tbody th {display:block; width:100%;}
+    
+    .content .step3 {margin-bottom: 0.5rem;}
+	
+    .content .step3 .sendMail { width: 100%; padding: 0; margin:0 0.5rem}
+    .content .step3 .sendMail input { width: calc(100% - 1rem)}
+
+    .content .step3 .agree {font-size: 0.9rem;}
+    .content .step3 .infobox {margin:0;}
+	.content .step3 .infobox p {margin-left:0.5rem}
+    .content .step3 .infobox ul {padding-left: 2rem; font-size: 0.9rem;}	
+
+    .layer {width: 22rem !important;}
+    .layer p {font-size: 1.5rem;margin: 1.5rem 0;}
+}
