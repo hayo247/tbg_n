@@ -50,7 +50,7 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 .helplayer input[id="slide07"]:checked ~ .slide07{display:block;}
 .helplayer img.pc{display:block;}
 .helplayer img.mobile{display:none;}
-.helplayer img{width: calc(100% - 5rem) !important;  height: calc(100% - 5rem) !important; border: 1px solid #e5e5e5; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; border-radius: 5px; box-shadow: 0 0 10px -4px;}
+.helplayer img{width: calc(100% - 2rem) !important;  height: calc(100% - 5rem) !important; border: 1px solid #e5e5e5; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; border-radius: 5px; box-shadow: 0 0 10px -4px;}
 .helplayer .btn_close{float: right; background: url(./img/icon/close.png) no-repeat; width: 3.5rem; height: 3.5rem; background-size: contain; border: 0; position: sticky; right: 3.5rem; top: 3.5rem;cursor:pointer;z-index:999;}
 .helplayer .div_move{position:relative; height:55%}
 .helplayer .btn_left{background: url(./img/icon/left.png) no-repeat; width: 5rem; height: 5rem; background-size: contain; border: 0; position: absolute; left: 0.5rem; bottom:0;cursor:pointer;}
@@ -167,6 +167,9 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 	.paylayer .divMsg{position: absolute;top: 50%;z-index: 999;left: 0;width: 100%;}
 	.paylayer button{width: 80%; height: 4rem; font-size: 1.8rem; background: #4374D9; color: #fff; margin-top:2rem}
 
+	.paylayer img.pc{display:none;}
+	.paylayer img.mobile{display:block;}
+
 	.content .center {width:100%}
 
     .content .top ul {padding : 0; margin: 0;}
@@ -201,4 +204,13 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 
     .layer {width: 22rem !important;}
     .layer p {font-size: 1.5rem;margin: 1.5rem 0;}
+}
+
+@media ( max-width: 356px ) {
+	.content .bottom button {width: 100%; margin-bottom: 0.3rem}	
+	.layer_popup {position:fixed; display: inline-block; z-index:999}
+	.helplayer .btn_close {right:1rem;}
+	.layer {width:100% !important}
+	.layer p{margin: 1rem}
+	
 }

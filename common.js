@@ -1,4 +1,11 @@
 
+function getParameter(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURI(decodeURIComponent(results[1].replace(/\+/g, " ")));
+}
+
 // 숫자 포맷
 function format_num(num){
 	return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');

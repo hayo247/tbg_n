@@ -1,12 +1,17 @@
 $(function(){
+	
+	$("#market_name").val(getParameter("to"));
+	
 	$("#btnHelp").click(function(){
 		$("#slide01").prop('checked', true);
 		fn_layerPop($("#helpPopup"));
 	});
 
 	$("#btnPayOk").click(function(){
+		$("[name='topGroup'][value='step1']").prop('checked', true);
 		fn_initStep1("ALL");
 		fn_initStep2();
+		fn_moveTopPage();
 	});
 
 
@@ -380,8 +385,8 @@ function fn_nextPage(){
 			fn_layerPop($("#alertPopup"), '주문자 명을 입력해주세요.', $('#name'));
 			return;
 		}
-		if($('#phonNum').val() == "" ){
-			fn_layerPop($("#alertPopup"), '연락처를 입력해주세요.', $('#phonNum'));
+		if($('#tel').val() == "" ){
+			fn_layerPop($("#alertPopup"), '연락처를 입력해주세요.', $('#tel'));
 			return;
 		}
 		if($('#email').val() == "" ){
@@ -629,28 +634,26 @@ function send_email(){
 		cartTxt += $(this).find('input[name="금액"]').val();
 	});
 	
-	
-	$('#cart').text(cartTxt);
+	$('#cart').val(cartTxt);
 
-	
 	var queryString = $("form[name=emailfrm]").serialize() ;
 	
-	
-	fn_callBackSendEmail();
-/*
 	$.ajax({
 		data : queryString,
 		type : 'post',
-		url : 'https://script.google.com/macros/s/AKfycbwDHCFHN3UPcvIhagit49PdCbLk-24sQUy8cXCbAJhZaa16LkuNTl_pErMi8hE9r5F5/exec',
+		url : 'https://script.google.com/macros/s/AKfycbxvwe6zJEcoI6A6awU8tgIuO-RekvqKQlvNiLok61idMCgEKLUXGo7X0P1N9q1YP10/exec',
 		dataType : 'json',
 		error: function(xhr, status, error){
 			fn_layerPop($("#layer_alert"), error);
 		},
-		success : function(json){
-			fn_layerPop($("#layer_alert"), "견적서가 발송되었습니다.");
-			fn_callBackSendEmail();
+		success : function(result){
+			if(result.result == "error"){
+				fn_layerPop($("#alertPopup"), result.error.message);		
+			}else{
+				fn_callBackSendEmail();
+			}
 		}
-	});	*/
+	});
 }
 
 function fn_callBackSendEmail(){
