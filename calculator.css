@@ -144,8 +144,15 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 .content .step3 .sendMail {padding:0 1rem;}
 .content .step3 .sendMail input {display:block; margin:0.2rem 0; font-size:1.5rem; border-radius:0.3rem}
 
-.content .step3 .agree {text-align:center; height:16rem; padding:0.5rem 0}
-.content .step3 .agree textarea {width: calc(100% - 1rem); height:12rem; margin: 0 0.5rem;}
+.content .step3 .div_radio [type='radio'], label {vertical-align: middle;}
+.content .step3 .div_radio {padding:0.5rem 0; font-size:1.5rem; line-height: 2rem; }
+.content .step3 .div_radio .inline {display:flex;}
+.content .step3 .div_radio input[type='radio'] {appearance: none;border: max(2px, 0.1em) solid gray; border-radius: 50%; width: 1.5em; height: 1.5em; margin: 0 0.5rem;}
+.content .step3 .div_radio input[type='radio']:checked { border: 0.4em solid tomato;}
+.content .step3 .div_radio input[type="radio"]:hover { box-shadow: 0 0 0 max(4px, 0.2em) lightgray; cursor: pointer;}
+
+.content .step3 .agree {text-align:center; height:13rem; padding:0.5rem 0}
+.content .step3 .agree textarea {width: calc(100% - 1rem); height:11rem; margin: 0 0.5rem;}
 
 .content .step3 .infobox {margin:0 1rem}
 .content .step3 .infobox p{margin:0.3rem 0}
@@ -186,7 +193,7 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 	.content .top ul li .top_group {font-size: 1.2rem; padding:0.4rem 0 }
     
     .content .step2 table.basket thead {display: none;}  
-    .content .step2 table.basket th {text-align: left;}
+    .content .step2 table.basket th {text-align: center;}
     .content .step2 table.basket tbody div.tb {display:flex}
     .content .step2 table.basket tbody .tb_title {width:25%}
     .content .step2 table.basket tbody .tb_value {width:75%}

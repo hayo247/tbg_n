@@ -14,7 +14,6 @@ $(function(){
 		fn_moveTopPage();
 	});
 
-
 	$("[name='topGroup']").click(function(){
         fn_moveTopPage();
 	});
@@ -115,6 +114,14 @@ $(function(){
 			$("#individualTxt").show();
 		}
 	});
+
+	$("[name='take']").click(function(){
+		if("email" == $(this).val()){
+			$("#email").show();
+		}else{
+			$("#email").hide();
+		}
+	});	
 
 });
 
@@ -385,11 +392,7 @@ function fn_nextPage(){
 			fn_layerPop($("#alertPopup"), '주문자 명을 입력해주세요.', $('#name'));
 			return;
 		}
-		if($('#tel').val() == "" ){
-			fn_layerPop($("#alertPopup"), '연락처를 입력해주세요.', $('#tel'));
-			return;
-		}
-		if($('#email').val() == "" ){
+		if("email" == $("[name='take']:checked").val() && $('#email').val() == "" ){
 			fn_layerPop($("#alertPopup"), '이메일을 입력해주세요.', $('#email'));
 			return;
 		}
@@ -398,8 +401,12 @@ function fn_nextPage(){
 			fn_layerPop($("#alertPopup"), '개인정보 취급동의에 체크해주세요.', $("#agree_privacy"));
 			return;
 		}
-
-		send_email();
+		
+		if("img" == $("[name='take']:checked").val()){
+			save_img();
+		}else{
+			send_email();
+		}
     }
 }
 
@@ -604,6 +611,41 @@ function fn_showingStep2_totOpt(){
 	$("#totOptCnt").text(format_num(totPrice/1000));	
 	$("#totCnt").text(format_num(totCnt));
 	$("#totPrice").text(format_num(totPrice));
+}
+
+// 
+function save_img(){
+	$('#saveImgForm ._name').text($('#name').val());
+	
+	if($("#tbBasket tr input[name='배송비추가'][value='1']").length > 0){
+		$('#saveImgForm ._addDeliver').text("추가");
+	}else{
+		$('#saveImgForm ._addDeliver').text("없음");
+	}
+	
+	$('#saveImgForm ._market').text($('#market_name').val());
+	
+	var html = "";
+	
+	$('#tbBasket tr').each(function(index){
+		html += '<tr style=" border-bottom: 2px solid #BDBDBD; height: 60px;">';
+		html += '	<td style="border-right: 1px solid #BDBDBD;">' + $(this).find('.name').text() +'</td>';
+		html += '	<td style="border-right: 1px solid #BDBDBD;">' + $(this).find('input[name="수량"]').val() +'</td>';
+		html += '	<td style="border-right: 1px solid #BDBDBD;">' + $(this).find('input[name="제품모양"]').val() +'</td>';
+		html += '	<td style="border-right: 1px solid #BDBDBD;">' + $(this).find('.option').text() +'</td>';
+		html += '	<td>' + $(this).find('input[name="금액"]').val() +'</td>';
+		html += '</tr>';
+	});
+
+	html += '<tr style="border-top: 2px solid #747474; font-weight: bold;">  ';   
+	html += '	<td style="height: 40px;">Total</td>';
+	html += '  	<td>' + $('#totCnt').text() + '</td>';
+	html += '	<td colspan="2"></td>';
+	html += '	<td>' + $('#totPrice').text() + '</td>';
+	html += '</tr>';
+	$('#saveImgForm ._cartList').html(html);
+	
+	fn_downloadImg('saveImgForm', '견적서')
 }
 
 // 이메일 보내기
