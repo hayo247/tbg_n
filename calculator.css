@@ -30,6 +30,8 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 .layer button {font-size:1.5rem; padding:0.5rem 1rem; background:#4375DB; color:fff; border-radius:0.5rem}
 .dimmed{z-index:998; background-color: rgba(0, 0, 0, 0.75); position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
 
+.loadlayer{z-index:999; width: 30rem !important; min-height: 10rem; max-height: 13rem; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto;}
+
 .paylayer {position: absolute;top: 0;z-index: 999;left: 0;width: 100%;}
 .paylayer img.pc{display:block;}
 .paylayer img.mobile{display:none;}

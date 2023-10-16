@@ -115,6 +115,7 @@ $(function(){
 	});
 
 	$("[name='take']").click(function(){
+		$("#email").val("");
 		if("email" == $(this).val()){
 			$("#email").show();
 		}else{
@@ -645,13 +646,12 @@ function save_img(){
 	$('#saveImgForm ._cartList').html(html);
 	
 	fn_downloadImg('saveImgForm', '견적서');
-	
-	$("._payOpt").text($("#totOptCnt").text());
-	fn_layerPop($("#payPopup"));
+	send_email();
 }
 
 // 이메일 보내기
 function send_email(){	
+	fn_layerPop($("#loadingPopup"));
 	$('#price_total').val($('#totPrice').text());
 	$('#price_count').val($('#totCnt').text());
 	$('#price_option').val($('#totOptCnt').text());
@@ -685,12 +685,13 @@ function send_email(){
 	$.ajax({
 		data : queryString,
 		type : 'post',
-		url : 'https://script.google.com/macros/s/AKfycbxvwe6zJEcoI6A6awU8tgIuO-RekvqKQlvNiLok61idMCgEKLUXGo7X0P1N9q1YP10/exec',
+		url : 'https://script.google.com/macros/s/AKfycbymOB13o1l3XxB1QdK83R9nZTBGR79tvJM7Ppmyd-hK29yo1nXpm7VJFv4T0QPR3QuK/exec',
 		dataType : 'json',
 		error: function(xhr, status, error){
 			fn_layerPop($("#layer_alert"), error);
 		},
 		success : function(result){
+			$("#loadingPopup").hide();
 			if(result.result == "error"){
 				fn_layerPop($("#alertPopup"), result.error.message);		
 			}else{
