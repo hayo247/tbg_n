@@ -483,7 +483,7 @@ function fn_drawHtmlStep2(){
 		html += '	<th class="all">';
 		html += '	  <div class="tb">';
 		html += '		<span class="tb_title">제품명</span>';
-		html += '	  	<span class="tb_value">' +  productNm +'<br>(' + $("#width").val() + ' x ' + $("#height").val() + ')</span>';
+		html += '	  	<span class="tb_value name">' +  productNm +'<br>(' + $("#width").val() + ' x ' + $("#height").val() + ')</span>';
 		html += '	  </div>';
 		html += '	  <div class="tb">';
 		html += '		<span class="tb_title">수량</span>';
@@ -497,7 +497,7 @@ function fn_drawHtmlStep2(){
 		if("" != optionTxt){
 			html += '	  <div class="tb">';
 			html += '		<span class="tb_title">옵션</span>';
-			html += '	  	<span class="tb_value">' + optionTxt + '</span>';
+			html += '	  	<span class="tb_value option">' + optionTxt + '</span>';
 			html += '	  </div>';
 		}
 		html += '	  <div class="tb">';
