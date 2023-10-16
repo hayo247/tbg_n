@@ -373,7 +373,7 @@
 						<p class="red">주문전 확인 사항!</p>
 						<ul>
 							<li>판매자에게 <span class="red">견적서를 전송한 뒤 결제수량대로 결제를 진행</span>해주시면 됩니다.</li>
-							<li>다수의 견적서 발송시 마지막 견적서 기준으로 제작이 됩니다.</li>
+							<li>다수의 견적서 발송시 <span class="red">마지막 견적서 기준으로 제작</span>이 됩니다.</li>
 							<li>견적기 내 확인되는 차액이 발생되는 경우 고객님께 별도로 연락드려 안내드립니다.</li>
 							<li><span class="red">받은 개인 정보는 견적서 발송에만 사용</span>이 됩니다.</li>
 						</ul>
@@ -393,10 +393,10 @@
 					</div>
 					<div class="divMsg">
 						<p>메일이 정상적으로 발송되었습니다.</p>
-						<p>결제옵션 수량은 <span class="red fontsize5" id="payOpt"></span>개 입니다.</p>
-						<p>해당 수량 만큼 선택 후 결제를 진행바랍니다.</p>
+						<p>결제옵션 수량은 <span class="red fontsize5 _payOpt"></span>개 입니다.</p>
+						<p>수량 수정 후 <span class="red">결제</span>를 바랍니다.</p>
 						<p class="_deliver" style="display: none;">대형사이즈 <span class="red">추가 운임비를 선택</span>하시길 바랍니다.</p>
-						<p class="_deliver" style="display: none;">(가로*세로 합산이 2000mm가 넘을시 추가 운임비가 붙습니다.)</p>
+						<p class="_deliver" style="display: none;">(가로*세로 합산이 2000mm가 초과시 추가 운임비가 붙습니다.)</p>
 						<button class="btn_close" id="btnPayOk">다시하기</button>
 					</div>
 				</div>
@@ -492,8 +492,6 @@
 				<div class="dimmed"></div>
 			</div>
 		</div>
-		
-		
 		
 		<div style="left:-99999; top:-99999; position:fixed; border: 1px solid #5D5D5D; width: 900px; background: #8C8C8C;" id="saveImgForm">
 			<div style="margin:5px; padding : 5px; background: #4374d9">

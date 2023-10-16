@@ -644,7 +644,10 @@ function save_img(){
 	html += '</tr>';
 	$('#saveImgForm ._cartList').html(html);
 	
-	fn_downloadImg('saveImgForm', '견적서')
+	fn_downloadImg('saveImgForm', '견적서');
+	
+	$("._payOpt").text($("#totOptCnt").text());
+	fn_layerPop($("#payPopup"));
 }
 
 // 이메일 보내기
@@ -698,6 +701,6 @@ function send_email(){
 }
 
 function fn_callBackSendEmail(){
-	$("#payOpt").text($("#totOptCnt").text());
+	$("._payOpt").text($("#totOptCnt").text());
 	fn_layerPop($("#payPopup"));
 }

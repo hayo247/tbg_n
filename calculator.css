@@ -35,6 +35,7 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 .paylayer img.mobile{display:none;}
 .paylayer .divImg img{width: 100%; height: 100%;}
 .paylayer .divMsg{position: absolute;top: 25%;z-index: 999;right: 1rem;width: 50%; font-size:1.5rem}
+.paylayer .divMsg p{margin: 0.5rem 0;}
 .paylayer button{width: 37%; height: 4rem; font-size: 1.8rem; background: #4374D9; color: #fff; margin-top:2rem}
 .whiteDimmed{z-index:998; background-color: #FFF; position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
 	
@@ -172,6 +173,7 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 	.helplayer .paging{bottom:1rem}
 	
 	.paylayer .divMsg{position: absolute;top: 50%;z-index: 999;left: 0;width: 100%;}
+	.paylayer .divMsg p{margin: 0.5rem 0;}
 	.paylayer button{width: 80%; height: 4rem; font-size: 1.8rem; background: #4374D9; color: #fff; margin-top:2rem}
 
 	.paylayer img.pc{display:none;}
