@@ -218,6 +218,5 @@ a         {font-style:normal;text-decoration:none;color:#555;cursor:pointer;outl
 	.layer_popup {position:fixed; display: inline-block; z-index:999}
 	.helplayer .btn_close {right:1rem;}
 	.layer {width:100% !important}
-	.layer p{margin: 1rem}
-	
+	.layer p{margin: 1rem}	
 }

@@ -1,5 +1,4 @@
 $(function(){
-	
 	$("#market_name").val(getParameter("to"));
 	
 	$("#btnHelp").click(function(){
