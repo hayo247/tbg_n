@@ -645,7 +645,13 @@ function save_img(){
 	html += '</tr>';
 	$('#saveImgForm ._cartList').html(html);
 	
-	fn_downloadImg('saveImgForm', '견적서');
+	var dt = new Date();
+	var fileNm = "식탁유리견적서";
+	
+	fileNm = fileNm + dt.toLocaleDateString().replace(/\./gi, '').replace(/\ /gi, '');
+	fileNm = fileNm + dt.toTimeString().split(' ')[0].replace(/\:/g, '');
+	
+	fn_downloadImg('saveImgForm', fileNm);
 	send_email();
 }
 
@@ -685,7 +691,7 @@ function send_email(){
 	$.ajax({
 		data : queryString,
 		type : 'post',
-		url : 'https://script.google.com/macros/s/AKfycbymOB13o1l3XxB1QdK83R9nZTBGR79tvJM7Ppmyd-hK29yo1nXpm7VJFv4T0QPR3QuK/exec',
+		url : 'https://script.google.com/macros/s/AKfycbxgSwpv_KaxflpkBR9pokqVE1hyHqHG3TQu_lCwiewTijlB32qLypHE2KTNrsp87t_P/exec',
 		dataType : 'json',
 		error: function(xhr, status, error){
 			fn_layerPop($("#layer_alert"), error);
