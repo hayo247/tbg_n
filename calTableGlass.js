@@ -221,7 +221,7 @@ function fn_calPrice(){
 	}
 	
 	if($('#divCornerSize').is(':visible')){
-		price = price + parseInt($('#size').val() + "000");
+		price = price + parseInt(($('#size').val() * $("#quantity").val()) + "000");
 	}
 
 	// 100원 단위 반올림
