@@ -8,7 +8,9 @@ function getParameter(name) {
 
 // 숫자 포맷
 function format_num(num){
-	return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+	const parts = num.toString().split('.');
+  	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  	return parts.join('.');
 }
 
 // 숫자 포맷
