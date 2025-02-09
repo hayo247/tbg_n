@@ -1,5 +1,7 @@
 $(function(){
 	$("#market_name").val(getParameter("to"));
+	$("input").removeAttr("readonly"); 
+	$('.selectbox step1_3').off('scroll touchmove mousewheel');
 	
 	$("#btnHelp").click(function(){
 		$("#slide01").prop('checked', true);
